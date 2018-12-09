@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     let now = new Date().toString();
     let log = `${now}: ${req.method}: ${req.url}`;
     fs.appendFile('server.log', log + '\n', (error) => {
-        if (err) throw err;
+        if (error) throw error;
         console.log('The "data to append" was appended to file!');
     });
     next();
